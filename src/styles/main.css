@@ -8,7 +8,8 @@
     scroll-behavior: smooth;
 }
 
-a {
+a,
+button {
     min-width: 44px;
     min-height: 44px;
 }
@@ -17,50 +18,6 @@ body {
     font-family: 'Source Code Pro', monospace;
     line-height: 1.6;
     margin: 0;
-}
-
-.header,
-.home,
-.about,
-.portfolio,
-.contact {
-    height: 100vh;
-}
-
-.header,
-.home,
-.about,
-.portfolio,
-.contact {
-    position: relative;
-}
-
-.header h1,
-.home h1,
-.about h1,
-.portfolio h1,
-.contact h1 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.header h1::before,
-.home h1::before,
-.about h1::before,
-.portfolio h1::before,
-.contact h1::before {
-    content: '#';
-}
-
-.header h1 {
-    color: var(--shades);
-}
-
-.header {
-    background-color: var(--primary);
 }
 
 .navbar {
@@ -77,10 +34,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1;
-}
-
-.hidden {
-    display: none;
 }
 
 .display__logo {
@@ -246,41 +199,6 @@ body {
     .header__menu i:nth-child(3) {
         margin-top: 4px;
     }
-}
-
-#nav:checked+.header__menu {
-    transform: rotate(45deg);
-}
-
-#nav:checked+.header__menu i {
-    background-color: var(--shades);
-    transition: transform 0.2s ease;
-}
-
-#nav:checked+.header__menu i:nth-child(1) {
-    transform: translateY(6px) rotate(180deg);
-}
-
-#nav:checked+.header__menu i:nth-child(2) {
-    opacity: 0;
-}
-
-#nav:checked~.nav__item a {
-    display: block !important;
-}
-
-#nav:checked+.header__menu i:nth-child(3) {
-    transform: translateY(-6px) rotate(90deg);
-}
-
-#nav:checked~.nav {
-    z-index: 9990;
-    opacity: 1;
-}
-
-#nav:checked~.nav ul li a {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .hero {
