@@ -13,15 +13,20 @@
         <a href="#top" class="nav__link"> <span class="logo"> It</span></a>
     </div>
 
-    <input type="checkbox" id="nav" class="hidden" />
-    <label for="nav" class="nav__burger"><i></i><i></i><i></i></label>
-    <div class="nav">
+    <label class="nav__burger" id="nav__burger">
+        <a href="#">
+            <i></i><i></i><i></i>
+        </a>
+        </label>
+
+    <div class="nav" id="drawer">
         <ul class="nav__list">
             <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Favorite</a></li>
-            <li class="nav__item"><a href="https://www.linkedin.com/in/muhsholihin29/" class="nav__link">About Us</a></li>
+            <li class="nav__item"><a href="https://www.linkedin.com/in/muhsholihin29/" class="nav__link" target="_blank">About Us</a></li>
         </ul>
     </div>
+
 </nav>
 
 <body>
@@ -35,7 +40,7 @@
     <main id="maincontent">
         <section class="content">
             <div class="latest">
-                <h1 class="latest__label">Explore Restaurant</h1>
+                <h2 class="explore__label">Explore Restaurant</h2>
                 <div class="restaurants" id="restaurants">
 
                 </div>

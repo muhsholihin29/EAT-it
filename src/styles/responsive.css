@@ -50,9 +50,16 @@
         flex-direction: row;
         justify-content: space-between;
     }
+    #nav__burger {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 799px) {
+    #drawer.open {
+        transform: translate(0, 0);
+        z-index: 999;
+    }
     .nav {
         position: fixed;
         top: 0;
@@ -61,7 +68,7 @@
         width: 100%;
         z-index: -1;
         background-color: var(--primary);
-        opacity: 0;
+        transform: translate(-799px, 0);
         transition: all 0.2s ease;
     }
     .nav .nav__list {
@@ -73,7 +80,6 @@
     }
     .nav .nav__list .nav__item {
         display: block;
-        float: none;
         width: 100%;
         text-align: right;
         margin-bottom: 10px;
@@ -95,7 +101,6 @@
     }
     .nav .nav__list .nav__item .nav__link {
         padding: 10px 25px;
-        opacity: 0;
         color: var(--shades);
         font-size: 24px;
         font-weight: 600;

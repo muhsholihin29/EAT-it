@@ -3,6 +3,16 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import data from '../DATA.json';
 
+const navBurger = document.querySelector('#nav__burger');
+const drawer = document.querySelector('#drawer');
+
+navBurger.addEventListener('click', function(event) {
+    drawer.classList.toggle('open');
+    navBurger.classList.toggle('rotate');
+    event.stopPropagation();
+});
+
+
 const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
 let explore = "";
 data.restaurants.forEach((data) => {
@@ -16,7 +26,7 @@ data.restaurants.forEach((data) => {
         </div>
         <div class="restaurant-item__content">
             <p class="restaurant-rating">✩ ${data.rating}</p>
-            <h1 class="restaurant-item__title"><a href="#">${data.name}</a></h1>
+            <h3 class="restaurant-item__title"><a href="#">${data.name}</a></h3>
             <p class="restaurant-item__description" maxLength="5">${truncate(data.description, 240, '...')}</p>
         </div>
     </article>
