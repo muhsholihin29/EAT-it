@@ -1,0 +1,231 @@
+:root {
+    --primary: rgba(37, 37, 37, 1.0);
+    --secondary: #FA9022;
+    --shades: #f7f7fb;
+}
+.restaurant-header {
+	max-width: 100%;
+    background-color: var(--shades);
+    margin-bottom: 2.5rem;
+    padding: 2rem 0;
+	margin-right: auto;
+    margin-left: auto;
+}
+
+.restaurant-header .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.restaurant-header .container .col-image {
+    display: flex;
+    height: 300px;
+}
+
+.restaurant-header .container .col-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 #39393a1a;
+    object-fit: cover;
+}
+
+.restaurant-header .container .col-info {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.restaurant-header .container .col-info h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.restaurant-header .container .col-info .categories-info {
+    display: inline-block;
+}
+
+.restaurant-header .container .col-info .categories-info span {
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 10px;
+    padding: 0.2rem 1rem;
+    border-radius: 4px;
+}
+
+.restaurant-header .container .col-info .basic-info {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 80px 100px auto;
+    font-size: 12px;
+}
+
+.restaurant-header .container .col-info .basic-info i.fa.active {
+    color: #ffc107;
+}
+
+.restaurant-header .container .col-info .description-info {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 10.6em;
+    line-height: 1.8em;
+    color: #6d6d6d;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.restaurant-header .container .col-address-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.restaurant-header .container .col-address-info div {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.restaurant-header .container .col-address-info h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.restaurant-header .container .col-address-info p {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+.restaurant-header .container .col-address-info a {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.restaurant-header .container .col-address-info a:hover {
+    color: var(--secondary);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+    .restaurant-header {
+        padding: 1.5rem 0;
+    }
+
+    .restaurant-header .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .restaurant-header .container .col-info {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .restaurant-header .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+    }
+
+    .restaurant-header .container .col-info {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+/* Min Large devices */
+@media (min-width: 992px) {
+    .restaurant-header .container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.restaurant-review .main-card {
+	
+	background-color: var(--shades);
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 0 rgba(51, 54, 69, 0.1);
+	margin-bottom: 15px;
+}
+
+.restaurant-review .main-card .col-image {
+	padding: 10px;
+	height: 100%;
+}
+
+.restaurant-review .main-card .col-image img {
+	width: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.restaurant-review .main-card {
+	padding: 15px 5px;
+}
+
+.restaurant-review .main-card h4 {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.restaurant-review .main-card p {
+	
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-height: 5.6em;
+	line-height: 1.8em;
+	color: #6d6d6d;
+	margin-bottom: 0;
+}
+
+.restaurant-review .main-card p.note {
+    font-size: 12px;
+	margin-top: 5px;
+}
+
+.restaurant-review .main-card p.date {
+	font-size: 10px;
+	font-style: italic;
+}
+
+main .main-list .main-form {
+	padding: 1.5rem;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 0 rgba(51, 54, 69, 0.1);
+	margin-bottom: 15px;
+}
+
+main .main-list .main-form .col-form {
+	width: 100%;
+	display: grid;
+	margin-bottom: 15px;
+}
+
+main .main-list .main-form .col-form label {
+	margin-bottom: 10px;
+}
+
+main .main-list .main-form .col-form input,
+    main .main-list .main-form .col-form textarea {
+	width: auto;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #9a9a9a;
+	border-radius: 5px;
+	outline-color: #ff9800;
+	font-family: "Lato", sans-serif;
+}
+
+@media (max-width: 767.98px) {
+	.restaurant-review .main-card {
+		grid-template-columns: 30% 70%;
+	}
+}

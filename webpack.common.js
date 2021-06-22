@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin"); {
@@ -6,6 +7,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin"); {
     ]
 }
 const path = require('path');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -33,9 +35,12 @@ module.exports = {
         ],
     },
     plugins: [
-        new FaviconsWebpackPlugin({
-            logo: path.resolve(__dirname, 'src/public/icon.png'),
-        }),
+        new ServiceWorkerWebpackPlugin({
+            entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+          }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+          }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/templates/index.html'),
             filename: 'index.html',

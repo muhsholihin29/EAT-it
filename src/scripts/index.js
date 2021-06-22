@@ -1,9 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
-import data from '../DATA.json';
 import App from './views/app';
-
+import swRegister from './utils/sw-register';
 
 const app = new App({
     button: document.querySelector('#nav__burger'),
@@ -17,6 +16,7 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
     app.renderPage();
+    swRegister();
 });
 
 const onItemRestaurantClick = (id) => {
