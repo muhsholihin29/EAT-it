@@ -2,6 +2,7 @@ import '../../../styles/detail.css';
 import UrlParser from '../../routes/url-parser';
 import restaurantSource from '../../data/restaurant-source';
 import { createMenutItemTemplate, createRestaurantDetailTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
     async render() {
@@ -35,6 +36,7 @@ const Detail = {
           </div>
           <div id="likeButtonContainer"></div>
       </div>
+      <div id="likeButtonContainer"></div>
       `;
     },
 
@@ -48,16 +50,17 @@ const Detail = {
         restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
         await this.addCustomerReviews(url.id);
 
-        // LikeButtonInitiator.init({
-        //     likeButtonContainer: document.querySelector('#likeButtonContainer'),
-        //     restaurant: {
-        //         id: restaurant.id,
-        //         title: restaurant.title,
-        //         overview: restaurant.overview,
-        //         backdrop_path: restaurant.backdrop_path,
-        //         vote_average: restaurant.vote_average,
-        //     },
-        // });
+        LikeButtonInitiator.init({
+            likeButtonContainer: document.querySelector('#likeButtonContainer'),
+            restaurant: {
+                id: restaurant.id,
+                name: restaurant.name,
+                pictureId: restaurant.pictureId,
+                rating: restaurant.rating,
+                city: restaurant.city,
+                description: restaurant.description,
+            },
+        });
     },
 
     async addCustomerReviews(id) {

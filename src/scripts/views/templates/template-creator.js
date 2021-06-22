@@ -5,7 +5,7 @@ const createRestaurantItemTemplate = (restaurant) => /*html*/`
 
 <article class="restaurant-item" onclick="location.href='#/detail/${restaurant.id}'" style="cursor: pointer;">
     <div class="thumbnail">
-        <img class="restaurant-item__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
+        <img class="restaurant-item__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL.MEDIUM + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
         <div class="thumbnail_inner">
             <p>${restaurant.city}</p>
         </div>
@@ -84,8 +84,21 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/`
     </div>
 `;
 
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+ 
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
 
 export {
     createRestaurantItemTemplate,
-    createRestaurantDetailTemplate
+    createRestaurantDetailTemplate,
+    createLikeButtonTemplate,
+    createLikedButtonTemplate
 };

@@ -39,6 +39,7 @@
   "dependencies": {
     "favicons-webpack-plugin": "^5.0.2",
     "file-loader": "^6.2.0",
+    "idb": "^6.1.2",
     "jquery": "^3.6.0",
     "regenerator-runtime": "^0.13.7",
     "serviceworker-webpack-plugin": "^1.0.1"
