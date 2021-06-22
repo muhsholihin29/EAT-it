@@ -6,21 +6,12 @@ import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
     async render() {
-        return /*html*/ `
-        <div class="restaurant-menu" id="restaurant-menu"></div>
+        return /*html*/ `        
         <div class="main-header">
-          <app-breadcrumb title=""></app-breadcrumb>
-          <shimmer-header-restaurant></shimmer-header-restaurant>
-          <header-restaurant></header-restaurant>
+          <content-restaurant></content-restaurant>
       </div>
       <div class="container">
-          <div class="main-menu">
-            <div class="shimmer-container-foods">
-              <shimmer-card-food></shimmer-card-food>
-            </div>
-          </div>
-          <div class="main-list" style="margin-top: 40px;">
-              
+          <div class="form-review" style="margin-top: 40px;">              
               <form class="main-form">
                   <div class="col-form">
                       <label for="name">Name</label>
@@ -33,8 +24,7 @@ const Detail = {
                   <button id="submitReview" aria-label="submit review" class="btn btn-warning">Submit</button>
               </form>
               <div class="main-review"></div>
-          </div>
-          <div id="likeButtonContainer"></div>
+          </div>        
       </div>
       <div id="likeButtonContainer"></div>
       `;
@@ -45,7 +35,7 @@ const Detail = {
         const url = UrlParser.parseActiveUrlWithoutCombiner();
         const restaurant = await restaurantSource.detailRestaurant(url.id);
         console.log(restaurant);
-        const restaurantContainer = document.querySelector('header-restaurant');
+        const restaurantContainer = document.querySelector('content-restaurant');
         // const restaurantMenu = document.querySelector('#restaurant-menu');
         restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
         await this.addCustomerReviews(url.id);

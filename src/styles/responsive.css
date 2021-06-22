@@ -142,3 +142,47 @@
         margin-top: 4px;
     }
 }
+
+/* Detail*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .restaurant-content .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+    }
+
+    .restaurant-content .container .col-info {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .restaurant-content .container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (max-width: 767.98px) {
+	.restaurant-review .main-card {
+		grid-template-columns: 30% 70%;
+	}
+}
+
+@media (max-width: 767.98px) {
+    .restaurant-content {
+        padding: 1.5rem 0;
+    }
+
+    .restaurant-content .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .restaurant-content .container .col-info {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}

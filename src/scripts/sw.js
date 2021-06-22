@@ -13,5 +13,5 @@ self.addEventListener('install', (event) => {
    
   self.addEventListener('fetch', (event) => {
     // event.respondWith(fetch(event.request));
-    // event.respondWith(CacheHelper.revalidateCache(event.request));
+    event.respondWith(CacheHelper.revalidateCache(event.request));
   });

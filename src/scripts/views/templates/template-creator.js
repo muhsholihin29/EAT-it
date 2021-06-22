@@ -20,10 +20,10 @@ const createRestaurantItemTemplate = (restaurant) => /*html*/`
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => /*html*/`
-    <div class="restaurant-header">
+    <div class="restaurant-content">
         <div class="container">
             <div class="col-image">
-                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL.MEDIUM}${restaurant.pictureId}"
+                <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM}${restaurant.pictureId}"
                     alt="${restaurant.name}" crossorigin="anonymous"/>
             </div>
             <div class="col-info">
@@ -35,7 +35,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/`
                 </div>
                 <div class="basic-info">
                     <div class="basic-info-col">
-                        ✩
+                        <i class="fa fa-star" aria-hidden="true"></i>
                         <span>${restaurant.rating}</span>
                     </div>
                     <div class="basic-info-col">
@@ -50,7 +50,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/`
                     ${restaurant.description}
                 </div>
             </div>
-            <div class="col-address-info">
+            <div class="col-menu-info">
                 <div class="col-food">                
                     <h4>Makanan</h4>                
                     ${restaurant.menus.foods.map((food) => `
@@ -74,7 +74,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/`
                   </div>
               </div>
         ${restaurant.customerReviews.map((review) => `        
-            <div class="main-card">
+            <div class="main-item">
                 <h4>${review.name}</h4>
                 <p class="note">${review.review}</p>
                 <p class="date">${review.date}</p>
