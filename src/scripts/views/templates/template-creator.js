@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config';
 
-const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
-const createRestaurantItemTemplate = (restaurant) => /*html*/`
+const truncate = (str, max, suffix) => (str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`);
+const createRestaurantItemTemplate = (restaurant) => /* html */`
 
 <article class="restaurant-item" onclick="location.href='#/detail/${restaurant.id}'" style="cursor: pointer;">
     <div class="thumbnail">
@@ -12,14 +12,14 @@ const createRestaurantItemTemplate = (restaurant) => /*html*/`
     </div>
     <div class="restaurant-item__content">
         <p class="restaurant-rating">✩ ${restaurant.rating}</p>
-        <h3 class="restaurant-item__title"><a href="#">${restaurant.name}</a></h3>
+        <h3 class="restaurant-item__title"><a href="#/detail/${restaurant.id}">${restaurant.name}</a></h3>
         <p class="restaurant-item__description" maxLength="5">${truncate(restaurant.description, 240, '...')}</p>
     </div>
 </article>
 
 `;
 
-const createRestaurantDetailTemplate = (restaurant) => /*html*/`
+const createRestaurantDetailTemplate = (restaurant) => /* html */`
     <div class="restaurant-content">
         <div class="container">
             <div class="col-image">
@@ -89,7 +89,7 @@ const createLikeButtonTemplate = () => `
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
- 
+
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
@@ -100,5 +100,5 @@ export {
     createRestaurantItemTemplate,
     createRestaurantDetailTemplate,
     createLikeButtonTemplate,
-    createLikedButtonTemplate
+    createLikedButtonTemplate,
 };

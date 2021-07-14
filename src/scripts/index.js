@@ -18,7 +18,3 @@ window.addEventListener('load', () => {
     app.renderPage();
     swRegister();
 });
-
-const onItemRestaurantClick = (id) => {
-    window.location.href = `/#/detail/${id}`;
-};

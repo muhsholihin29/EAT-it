@@ -17,7 +17,6 @@ const LikeButtonInitiator = {
         } else {
             this._renderLike();
         }
-
     },
 
     async _isRestaurantExist(id) {
@@ -29,7 +28,7 @@ const LikeButtonInitiator = {
         this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
         const likeButton = document.querySelector('#likeButton');
-        likeButton.addEventListener('click', async() => {
+        likeButton.addEventListener('click', async () => {
             await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
             this._renderButton();
         });
@@ -39,7 +38,7 @@ const LikeButtonInitiator = {
         this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
 
         const likeButton = document.querySelector('#likeButton');
-        likeButton.addEventListener('click', async() => {
+        likeButton.addEventListener('click', async () => {
             await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
             this._renderButton();
         });

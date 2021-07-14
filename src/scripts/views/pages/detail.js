@@ -1,12 +1,12 @@
 import '../../../styles/detail.css';
 import UrlParser from '../../routes/url-parser';
 import restaurantSource from '../../data/restaurant-source';
-import { createMenutItemTemplate, createRestaurantDetailTemplate } from '../templates/template-creator';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
     async render() {
-        return /*html*/ `        
+        return /* html */ `        
         <div class="main-header">
           <content-restaurant></content-restaurant>
       </div>
@@ -65,17 +65,7 @@ const Detail = {
                     review,
                 };
 
-                restaurantSource.reviewRestaurant(reviewData)
-                    .then((data) => {
-                        if (data.customerReviews) {
-                            swal('Thank You for Your Review', 'Your review has been sent successfully', 'success');
-
-                            $('.main-review').html('');
-                            data.customerReviews.map((newReview) => $('.main-review').append(createCustomerReviewTemplate(newReview)));
-                        }
-                    });
-            } else {
-                swal('Sorry!', 'Please fill out the form completely to add your review!', 'error');
+                restaurantSource.reviewRestaurant(reviewData);
             }
         });
     },

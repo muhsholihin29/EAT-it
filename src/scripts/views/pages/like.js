@@ -12,14 +12,14 @@ const Like = {
         </div>
      `;
     },
-   
+
     async afterRender() {
         const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
         const restaurantsContainer = document.querySelector('#restaurants');
         restaurants.forEach((restaurant) => {
-          restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+            restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         });
     },
-  };
-   
-  export default Like;
+};
+
+export default Like;

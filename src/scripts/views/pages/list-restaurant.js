@@ -10,7 +10,7 @@ const ListRestaurant = {
             <p class="hero__tagline">With several international chefs on board, EatIt is home to a rich variety of tantalising global cuisines.</p>
         </div>
     </div>
-        <section class="container">
+        <section class="container" id="contentRestaurants">
             <div class="latest">
                 <h2 class="explore__label">Explore Restaurant</h2>
                 <div class="restaurants" id="restaurants">
@@ -23,7 +23,7 @@ const ListRestaurant = {
 
     async afterRender() {
         const restaurants = await restaurantSource.listRestaurant();
-        const restaurantContainer = document.getElementById("restaurants");
+        const restaurantContainer = document.getElementById('restaurants');
         restaurants.forEach((restaurant) => {
             restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         });
