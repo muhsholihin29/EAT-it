@@ -19,7 +19,7 @@ const Like = {
         restaurants.forEach((restaurant) => {
             restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         });
-    },
+    }
 };
 
 export default Like;

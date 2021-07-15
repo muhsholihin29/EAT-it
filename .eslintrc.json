@@ -14,10 +14,11 @@
     "rules": {
         "linebreak-style": ["error", "windows"],
         "indent": "off",
-        "eol-last": ["error", "never"],
         "no-console": "off",
         "no-restricted-globals": ["error", "event", "fdescribe"],
         "no-underscore-dangle" : "off",
-        "no-undef" : "off"
+        "no-undef" : "off",
+        "comma-dangle": ["error", "never"],
+        "import/prefer-default-export": "off"
     }
 }
