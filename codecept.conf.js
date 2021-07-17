@@ -21,7 +21,9 @@ exports.config = {
   mocha: {},
   name: 'restaurant-apps',
   plugins: {
-    pauseOnFail: {},
+    pauseOnFail: {
+      enabled: true
+    },
     retryFailedStep: {
       enabled: true
     },

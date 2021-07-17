@@ -124,8 +124,9 @@ body {
     align-items: center;
     min-height: 380px;
     width: 100%;
+    background-size: cover;
     text-align: center;
-    background-image: url("../public/images/heros/hero-image.jpg");
+    background-image: url("/images/heros/hero-image-large.jpg");
     background-position: center;
     background-color: green;
 }
@@ -232,35 +233,6 @@ main {
 .restaurant-item .thumbnail_inner p {
     background: #2c3e50;
     padding: 8px;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    min-height: 380px;
-    width: 100%;
-    text-align: center;
-    background-image: url("../public/images/heros/hero-image.jpg");
-    background-position: center;
-    background-color: green;
-}
-
-.hero__inner {
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-.hero__title {
-    color: #fff;
-    font-weight: 500;
-    font-size: 36px;
-}
-
-.hero__tagline {
-    color: #fff;
-    margin-top: 16px;
-    font-size: 18px;
-    font-weight: 300;
 }
 
 .restaurant-rating {

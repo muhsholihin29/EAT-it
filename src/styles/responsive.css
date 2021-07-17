@@ -142,3 +142,16 @@
         margin-top: 4px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .hero {
+        display: flex;
+        background-size: cover;
+        align-items: center;
+        min-height: 380px;
+        text-align: center;
+        background-image: url("/images/heros/hero-image-small.jpg");
+        background-position: center;
+        background-color: green;
+    }
+}

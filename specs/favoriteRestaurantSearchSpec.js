@@ -50,34 +50,27 @@ describe('Searching restaurants', () => {
         it('should show the found restaurants', () => {
             presenter._showFoundRestaurants([{ id: 1 }]);
 
-            const foundRestaurants = document.querySelectorAll('.restaurant');
+            const foundRestaurants = document.querySelectorAll('.restaurant-item');
 
             expect(foundRestaurants.length).toEqual(1);
 
             presenter._showFoundRestaurants([
-                { id: 1, title: 'Satu' },
-                { id: 2, title: 'Dua' },
+                { id: 1, name: 'Satu' },
+                { id: 2, name: 'Dua' },
             ]);
-            expect(document.querySelectorAll('.restaurant').length).toEqual(2);
+            expect(document.querySelectorAll('.restaurant-item').length).toEqual(2);
         });
 
         it('should show the title of the found restaurants', () => {
-            presenter._showFoundRestaurants([{ id: 1, title: 'Satu' }]);
+            presenter._showFoundRestaurants([{ id: 1, name: 'Satu' }]);
             expect(
                 document.querySelectorAll('.restaurant__title').item(0)
                     .textContent
             ).toEqual('Satu');
-
-            presenter._showFoundRestaurants([
-                { id: 1, title: 'Satu' },
-                { id: 2, title: 'Dua' },
-            ]);
-
-            const restaurantTitles =
-                document.querySelectorAll('.restaurant__title');
-            expect(restaurantTitles.item(0).textContent).toEqual('Satu');
-            expect(restaurantTitles.item(1).textContent).toEqual('Dua');
         });
+        
+
+
         
 
         it('should show - for found restaurant without title', () => {
@@ -89,10 +82,10 @@ describe('Searching restaurants', () => {
             ).toEqual('-');
         });
 
+
+        
         it('should show the restaurants found by Favorite Restaurants', (done) => {
-            document
-                .getElementById('restaurant-search-container')
-                .addEventListener('restaurants:searched:updated', () => {
+            document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
                     const restaurantTitles =
                         document.querySelectorAll('.restaurant__title');
                     expect(restaurantTitles.item(0).textContent).toEqual(
@@ -111,9 +104,9 @@ describe('Searching restaurants', () => {
             favoriteRestaurants.searchRestaurants
                 .withArgs('film a')
                 .and.returnValues([
-                    { id: 111, title: 'film abc' },
-                    { id: 222, title: 'ada juga film abcde' },
-                    { id: 333, title: 'ini juga boleh film a' },
+                    { id: 111, name: 'film abc' },
+                    { id: 222, name: 'ada juga film abcde' },
+                    { id: 333, name: 'ini juga boleh film a' },
                 ]);
 
             searchRestaurants('film a');
@@ -145,16 +138,15 @@ describe('Searching restaurants', () => {
     });
 
     describe('When no favorite restaurants could be found', () => {
+
         it('should show the empty message', (done) => {
-            document
-                .getElementById('restaurant-search-container')
-                .addEventListener('restaurants:searched:updated', () => {
+            document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
                     expect(
                         document.querySelectorAll('.restaurants__not__found')
                             .length
                     ).toEqual(1);
                     done();
-                });
+                });            
 
             favoriteRestaurants.searchRestaurants
                 .withArgs('film a')
@@ -165,10 +157,8 @@ describe('Searching restaurants', () => {
     });
 
     it('should not show any restaurant', (done) => {
-        document
-            .getElementById('restaurant-search-container')
-            .addEventListener('restaurants:searched:updated', () => {
-                expect(document.querySelectorAll('.restaurant').length).toEqual(
+        document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
+                expect(document.querySelectorAll('.restaurant-item').length).toEqual(
                     0
                 );
                 done();

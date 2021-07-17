@@ -14,6 +14,7 @@ class FavoriteRestaurantShowPresenter {
 
     _displayRestaurants(restaurants) {
         this._view.showFavoriteRestaurants(restaurants);
+        console.log("show presenter");
     }
 }
 
